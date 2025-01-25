@@ -60,14 +60,12 @@ SELECT grade, COUNT(*) FROM student GROUP BY grade;
 SELECT DISTINCT grade FROM student;
 
 
-
-
 ### Screenshots
-    ![LaragonSetup]()
-    *** Fig: Laragon Setup ***
+![LaragonSetup](image/laragonsetup.png)
+Fig: Laragon Setup
 
-    ![MySQLBasics](image/DB1.png)
-    *** MySQL implementation ***
+![MySQLBasics](./image/DB1.png)
+FIg: MySQL implementation
 
 
 
@@ -120,61 +118,82 @@ CREATE TABLE students
 
 
 INSERT INTO students (name, age, grade, email)
+
 VALUES ('Liam', 16, 'B', 'liam1@example.com'),
+
    	('Ella', 15, 'C', 'ella3@example.com'),
+
    	('Sophia', 15, 'C', 'sophia3@example.com'),
+
    	('James', 14, 'C', 'james3@example.com'),
+
    	('Emma', 17, 'A', 'emma4@example.com'),
+
    	('Noah', 15, 'C', 'noah@example.com'),
+
    	('Alexander', 17, 'B', 'alexander@example.com'),
+
    	('Ella', 16, 'B', 'ella2@example.com'),
+
    	('Benjamin', 16, 'A', 'benjamin@example.com'),
+
    	('Sophia', 16, 'A', 'sophia4@example.com'),
+
    	('Zoe', 15, 'A', 'zoe@example.com'),
+
    	('Liam', 14, 'A', 'liam4@example.com'),
+
    	('Scarlett', 14, 'A', 'scarlett@example.com'),
+
    	('Harper', 17, 'C', 'harper@example.com'),
+
    	('Emma', 15, 'A', 'emma1@example.com'),
+
    	('Daniel', 16, 'A', 'daniel@example.com'),
+
    	('Ella', 17, 'A', 'ella1@example.com'),
+
    	('Chloe', 14, 'B', 'chloe@example.com'),
+
    	('Sophia', 16, 'B', 'sophia1@example.com'),
+
    	('Nathan', 17, 'C', 'nathan@example.com'),
+
    	('Hannah', 16, 'A', 'hannah@example.com'),
    	('Emma', 16, 'B', 'emma2@example.com'),
+
    	('Logan', 20, 'A', 'logan@example.com'),
+
    	('James', 19, 'A', 'james2@example.com'),
+
    	('Victoria', 15, 'B', 'victoria@example.com');
 
 
-	
  **1. Find all students who are 15 years old.**
-
+    SELECT * FROM students WHERE age =15;
 
  **2. Count how many students received grade 'B'.**
-
+    SELECT grade, COUNT(*) FROM students WHERE grade='B';
 
  **3. Write a query to find students whose email contains the word "emma".**
-
+    SELECT * FROM students WHERE email like'%emma%';
 
  **4. Retrieve the details of students who received grade 'A' and sort them by age in descending order.**
-
+    SELECT * FROM students WHERE grade='A' ORDER BY age DESC;
 
  **5. List the top 3 youngest students by their ages.**
-
+    SELECT * FROM students ORDER BY age ASC LIMIT 3;
 
  **6. Fetch all students who do not have grade 'C'.**
-
-
-
+    SELECT * FROM students WHERE grade !='C';
 
  **7. Find students whose names are unique in the table (no duplicates).**
     SELECT name, COUNT(name) name_count
     FROM students GROUP BY name HAVING name_count = 1;
 
-
  **8. Find the student(s) with the longest or shortest names.**
-
+    SELECT * FROM students LENGTH(name) DESC LIMIT 1;
+    SELECT * FROM students LENGTH(name) ASC LIMIT 1;
 
  **9. Verify whether all students are at least 14 years old.**
     SELECT IF(MIN(age) >= 14, 'Yes', 'No') result
@@ -197,6 +216,18 @@ VALUES ('Liam', 16, 'B', 'liam1@example.com'),
     GROUP BY grade;
 
 ### Screenshots
+![database2](/image/DB2.png)
+Fig: QueriesOutput
+
+![database3](/image/DB3.png)
+Fig: QueriesOutput
+
+![database4](/image/DB4.png)
+Fig: QueriesOutput
+
+![database5](/image/DB5.png)
+Fig: QueriesOutput
+
 
 
 ---
@@ -240,10 +271,12 @@ Create folders and subdirectories for models, views, and controllers structure t
 **4. Mock-Up Data and Partials**
 In this lab, mock data was used to simulate real-world scenarios. The structure and interactions between the Model, View, and Controller illustrate how the MVC pattern simplifies project development and maintenance.
 
-![MVC Hierarcy]()
+### Screenshots
+
+![MVC Hierarcy](/image/MVC.png)
 Fig:MVC Hierarcy
 
-![MockData]()
+![MockData](/image/mockdata.png)
 Fig:MockData
 
 ---
@@ -274,7 +307,8 @@ PDO offers an object-oriented interface and supports multiple database types. PD
 **4. Securing Database Credentials**: Learning to use environment variables store credentials in the database securely.
 
 ### Screenshots
-
+![databasephp](/image/databasephp.png)
+Fig: Connecting PHP to MySQL
 
 ---
 ## Lab 5: Create  and Read Operation in PHP with MySQL
@@ -297,6 +331,12 @@ This lab implement the "Create" functionality in PHP to insert data into the MyS
 
 **4. Test the Functionality**: Open the form and test the data are added correctly into the database through the form and displayed accurately.
 
+### Screenshots
+
+![createphp](/image/notesphp.png)
+![createnote](/image/createnote.png)
+![readnote](/image/readnote.png)
+
 
 ---
 ## Lab 6: Update and Delete Operations in PHP with MySQL
@@ -316,3 +356,8 @@ This lab encompases the "Update" and "Delete" functionalities to manage records 
  **2. Deleting Records**: Create a delete button with a confirmation dialog. 
 
 **3. Test the Update and Delete Functionalities**: Perform the operations in each forms in PHP and verify the operations are handled correctly.
+
+### Screenshots
+![udatenote](/image/updatenotes.png)
+![updatednote](/image/noteupdate.png)
+![Deletenote](/image/deletenote.png)
